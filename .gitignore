@@ -1,3 +1,4 @@
 ### Node template
 node_modules
 dist
+app/main.js
