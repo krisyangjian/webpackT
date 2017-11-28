@@ -19,12 +19,19 @@ module.exports = {
   module: {
      rules: [
        {
-         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
-       }
+         test: /\.js$/,
+         loader: "babel-loader",
+         options: {
+           presets: ["es2015"]
+         }
+        }
+      //  {
+      //    test: /\.css$/,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: "style-loader",
+      //     use: "css-loader"
+      //   })
+      //  }
      ]
    },
   devServer: {
@@ -35,7 +42,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new HTMLWebpackPlugin({title: 'Code Splitting'}),
+    new HTMLWebpackPlugin({
+      title: 'Code Splitting',
+      template: path.join(__dirname, 'index.html'),
+    }),
     new ExtractTextPlugin("[id].[chunkhash].css")
     //这个使用uglifyJs压缩你的js代码
     // new webpack.optimize.UglifyJsPlugin({minimize: true}),
