@@ -20,11 +20,20 @@ module.exports = {
      rules: [
        {
          test: /\.js$/,
-         loader: "babel-loader",
-         options: {
-           presets: ["es2015"]
+         use: "babel-loader",
+         exclude: /node_modules/
+        },
+        {
+          test: /\.css$/,
+          use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: "css-loader"
+          })
+         },
+         {
+           test: /\.(png|svg|jpg|gif)$/,
+           use: ['file-loader']
          }
-        }
       //  {
       //    test: /\.css$/,
       //   use: ExtractTextPlugin.extract({
@@ -35,18 +44,17 @@ module.exports = {
      ]
    },
   devServer: {
-    historyApiFallback: true,
     hot: true,
-    inline: true,
-    progress: true,
+    contentBase: './dist'
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HTMLWebpackPlugin({
-      title: 'Code Splitting',
       template: path.join(__dirname, 'index.html'),
     }),
-    new ExtractTextPlugin("[id].[chunkhash].css")
+    new ExtractTextPlugin({
+      filename: "[name].[contenthash].css"
+    })
     //这个使用uglifyJs压缩你的js代码
     // new webpack.optimize.UglifyJsPlugin({minimize: true}),
     //把入口文件里面的数组打包成verdors.js
