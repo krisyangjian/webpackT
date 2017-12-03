@@ -13,16 +13,16 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: "[name].[chunkhash].js",
-    chunkFilename: '[name].[chunkhash].js',
+    filename: "[name].bundle.js",
+    chunkFilename: '[name].undle.js'
   },
   module: {
      rules: [
-       {
-         test: /\.js$/,
-         use: "babel-loader",
-         exclude: /node_modules/
-        },
+      //  {
+      //    test: /\.js$/,
+      //    use: "babel-loader",
+      //    exclude: /node_modules/
+      //   },
         {
           test: /\.css$/,
           use: ExtractTextPlugin.extract({
@@ -30,17 +30,20 @@ module.exports = {
             use: "css-loader"
           })
          },
+        //  {
+        //    test: /\.(png|jpg|gif)$/,
+        //    use: ['file-loader']
+        //  },
          {
-           test: /\.(png|svg|jpg|gif)$/,
-           use: ['file-loader']
-         }
-      //  {
-      //    test: /\.css$/,
-      //   use: ExtractTextPlugin.extract({
-      //     fallback: "style-loader",
-      //     use: "css-loader"
-      //   })
-      //  }
+          test: /\.svg$/,
+          use: [
+            {loader: 'svg-sprite-loader', options: {
+              // symbolId: '[name]'
+              // extract: true,
+              // spriteFilename: 'flags-sprite.svg'
+            }}
+          ]
+        }
      ]
    },
   devServer: {
