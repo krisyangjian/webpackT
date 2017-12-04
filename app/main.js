@@ -5,7 +5,7 @@
 
 // import "./a.css";
 import ab from "./icon.svg";
-ssss
+var xyu  = null;
 var ssss = require("./icon.svg");
 
 
