@@ -4,8 +4,8 @@
 
 
 // import "./a.css";
-import ccc from "./icon.svg";
-
+import ab from "./icon.svg";
+ssss
 var ssss = require("./icon.svg");
 
 
