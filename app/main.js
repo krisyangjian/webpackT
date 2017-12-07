@@ -10,6 +10,7 @@ var b_1  = "new";
 var vvv= 3;
 var master = "sssss";
 var other = "SAdasd"
+var master = "aaaaa";
 var ssss = require("./icon.svg");
 
 
