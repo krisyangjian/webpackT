@@ -8,6 +8,7 @@ import ab from "./icon.svg";
 var xyu  = null;
 var b_1  = "new";
 var ccc= 3;
+var a = 99;
 
 var ssss = require("./icon.svg");
 
