@@ -7,7 +7,7 @@
 import ab from "./icon.svg";
 var xyu  = null;
 var b_1  = "new";
-var ccc= 3;
+var vvv= 3;
 
 var ssss = require("./icon.svg");
 
