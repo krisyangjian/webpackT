@@ -8,7 +8,7 @@ import ab from "./icon.svg";
 var xyu  = null;
 var b_1  = "new";
 var vvv= 3;
-
+var master = "ASdasd";
 var ssss = require("./icon.svg");
 
 
