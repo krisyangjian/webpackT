@@ -1,21 +1,17 @@
-// import {aaa} from "./common.js";
+// import Vue from 'vue'
+// import App from './a.vue'
+// import B from './b.vue'
+// import ElementUI from "element-ui"
+// import 'element-ui/lib/theme-chalk/index.css';
 
-// console.log(aaa);
+// Vue.component('app', App);
+// Vue.component('bpp', B);
 
+// Vue.use(ElementUI);
 
-// import "./a.css";
-import ab from "./icon.svg";
-var b_0 = "b_100";
-var master = "master10";
-var ssss = require("./icon.svg");
+// window.vm = new Vue({
+// 	el: '#root',
+// 	template: '<div><app></app><bpp></bpp><el-button>ssss</el-button></div>'
+// });
 
-
-var a = "sadasdasd";
-// document.getElementById("svg-con").innerHTML = '<svg><use xlink:href="#icon"></use></svg>';
-document.getElementById("svg-con2").innerHTML = '<svg><use xlink:href="#' + a.id + '"></use></svg>';
-
-var main = "222";
-
-
-
-
+import "./a.css"

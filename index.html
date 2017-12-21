@@ -1,20 +1,18 @@
 <!DOCTYPE HTML>
+<title></title>
 <head>
-  <style>
-    html, body {
-      height: 100%;
-      width: 100%;
-    }
-  </style>
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%=htmlWebpackPlugin.files.css[css] %>" id="sss" rel="stylesheet">
+    <% } %>
 </head>
 
 <body>
     <div id='root' class="root"></div>
-    <div id="svg-con">
-    </div>
-    <div id="svg-con2">
-      </div>
-    <!-- <script src="http://localhost:8080/vendors.js"></script> -->
-    <!-- <script src="dist/main.js"></script> -->
+
+
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+<div>ssss</div>
+<script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<% } %>
   </body>
 </html>
