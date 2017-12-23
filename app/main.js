@@ -1,4 +1,4 @@
-// import Vue from 'vue'
+import Vue from 'vue'
 // import App from './a.vue'
 // import B from './b.vue'
 // import ElementUI from "element-ui"
@@ -14,4 +14,4 @@
 // 	template: '<div><app></app><bpp></bpp><el-button>ssss</el-button></div>'
 // });
 
-import "./a.css"
+// import "./a.css"

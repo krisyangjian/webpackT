@@ -18,6 +18,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: "[name].bundle.js"
   },
+  externals: "vue", // string（精确匹配）
   module: {
      rules: [
       //  {
