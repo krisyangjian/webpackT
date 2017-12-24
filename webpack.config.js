@@ -10,6 +10,7 @@ const extract0 = new ExtractTextPlugin("s.css");
 const extract1 = new ExtractTextPlugin('[name]-two.css');
 
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const SimpleProgressWebpackPlugin = require( 'customized-progress-webpack-plugin' );
 
 module.exports = {
   entry:  {
@@ -87,7 +88,8 @@ module.exports = {
       template: path.join(__dirname, 'index.html')
     }),
     new ExtractTextPlugin("ssss.css"),
-    new ProgressBarPlugin()
+    // new ProgressBarPlugin(),
+    new SimpleProgressWebpackPlugin()
     // extract1
     //这个使用uglifyJs压缩你的js代码
     // new webpack.optimize.UglifyJsPlugin({minimize: true}),

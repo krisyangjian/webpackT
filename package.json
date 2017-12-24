@@ -14,6 +14,7 @@
     "axios": "^0.17.1",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
+    "customized-progress-webpack-plugin": "^0.0.3",
     "element-ui": "^2.0.8",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -27,9 +28,9 @@
     "vue": "^2.5.12",
     "vue-loader": "^13.6.0",
     "vue-template-compiler": "^2.5.12",
-    "webpack-dev-server": "^2.8.2"
+    "webpack-dev-server": "^2.8.2",
+    "progress-bar-webpack-plugin": "^1.10.0"
   },
   "dependencies": {
-    "progress-bar-webpack-plugin": "^1.10.0"
   }
 }
