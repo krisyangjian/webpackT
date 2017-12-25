@@ -9,8 +9,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const extract0 = new ExtractTextPlugin("s.css");
 const extract1 = new ExtractTextPlugin('[name]-two.css');
 
-var ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const SimpleProgressWebpackPlugin = require( 'customized-progress-webpack-plugin' );
+// var ProgressBarPlugin = require('progress-bar-webpack-plugin');
+// const SimpleProgressWebpackPlugin = require( 'customized-progress-webpack-plugin' );
 
 module.exports = {
   entry:  {
@@ -19,23 +19,24 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: "[name].bundle.js"
+    filename: "[name].bundle.js",
+    libraryTarget: 'commonjs2'
   },
-  externals: "vue", // string（精确匹配）
+  externals: "lodash", // `string（精确匹配）
   module: {
      rules: [
-      //  {
-      //    test: /\.js$/,
-      //    use: "babel-loader",
-      //    exclude: /node_modules/
-      //   },
-        {
-          test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: { loader: 'style-loader' },
-            use: "css-loader"
-          })
-         },
+       // {
+       //   test: /\.js$/,
+       //   use: "babel-loader",
+       //   exclude: /node_modules/
+       //  },
+        // {
+        //   test: /\.css$/,
+        //   use: ExtractTextPlugin.extract({
+        //     fallback: { loader: 'style-loader' },
+        //     use: "css-loader"
+        //   })
+        //  },
       // {
       //   test: /\.vue$/,
       //   loader: 'vue-loader',
@@ -86,15 +87,7 @@ module.exports = {
       title: "yangjian",
       inject:false,
       template: path.join(__dirname, 'index.html')
-    }),
-    new ExtractTextPlugin("ssss.css"),
-    // new ProgressBarPlugin(),
-    new SimpleProgressWebpackPlugin()
-    // extract1
-    //这个使用uglifyJs压缩你的js代码
-    // new webpack.optimize.UglifyJsPlugin({minimize: true}),
-    //把入口文件里面的数组打包成verdors.js
-    // new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+    })
   ],
   resolve: {
     alias: {
